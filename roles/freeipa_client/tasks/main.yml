@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: Disable SELinux
-  ansible.posix.selinux:
-    state: disabled
-  notify: restart host
+# - name: Disable SELinux
+#   ansible.posix.selinux:
+#     state: disabled
+#   notify: restart host
 
 - name: Set up DNS and networking
   when: enable_dns

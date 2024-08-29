@@ -262,14 +262,13 @@
 # ENDBLOCK # NiFi TLS
 
 # STARTBLOCK # Install Cluster Service Infrastructure II
-# NOTE: COMMENTED FOR PVC PRE-BAKED IMAGE TESTING
-# - name: Install RDBMS
-#   hosts: "{{ target | default('db_server') }}"
-#   become: yes
-#   roles:
-#     - cloudera.cluster.infrastructure.rdbms
-#   tags:
-#     - database
-#     - default_cluster
-#     - full_cluster
+- name: Install RDBMS
+  hosts: "{{ target | default('db_server') }}"
+  become: yes
+  roles:
+    - cloudera.cluster.infrastructure.rdbms
+  tags:
+    - database
+    - default_cluster
+    - full_cluster
 # ENDBLOCK # Install Cluster Service Infrastructure II

@@ -1,0 +1,6 @@
+---
+- name: Install required Python38 libraries
+  ansible.builtin.pip:
+    name: "{{ python38_libraries }}"
+    state: present
+    executable: pip3.8

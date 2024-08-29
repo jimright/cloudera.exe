@@ -1,0 +1,11 @@
+system_packages:
+  - tree 
+  - jq 
+  - zip
+  - python38
+  - lvm2 # for mount role
+
+python_libraries: []  
+
+python38_libraries:
+  - psycopg2-binary==2.9.5

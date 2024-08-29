@@ -15,16 +15,16 @@
 # limitations under the License.
 
 # STARTBLOCK # Install Cloudera Manager
-- name: Install Cloudera Manager daemons
-  hosts: "{{ target | default('cloudera_manager, cluster, ecs_nodes') }}"
-  become: yes
-  any_errors_fatal: true
-  roles:
-    - role: cloudera.cluster.cloudera_manager.daemons
-  tags:
-    - cm
-    - default_cluster
-    - full_cluster
+# - name: Install Cloudera Manager daemons
+#   hosts: "{{ target | default('cloudera_manager, cluster, ecs_nodes') }}"
+#   become: yes
+#   any_errors_fatal: true
+#   roles:
+#     - role: cloudera.cluster.cloudera_manager.daemons
+#   tags:
+#     - cm
+#     - default_cluster
+#     - full_cluster
 
 - name: Install Cloudera Manager server
   hosts: "{{ target | default('cloudera_manager') }}"
@@ -47,16 +47,16 @@
     - default_cluster
     - full_cluster
 
-- name: Install Cloudera Manager agents
-  hosts: "{{ target | default('cloudera_manager, cluster, ecs_nodes') }}"
-  become: yes
-  any_errors_fatal: true
-  roles:
-    - role: cloudera.cluster.cloudera_manager.agent
-  tags:
-    - cm
-    - default_cluster
-    - full_cluster
+# - name: Install Cloudera Manager agents
+#   hosts: "{{ target | default('cloudera_manager, cluster, ecs_nodes') }}"
+#   become: yes
+#   any_errors_fatal: true
+#   roles:
+#     - role: cloudera.cluster.cloudera_manager.agent
+#   tags:
+#     - cm
+#     - default_cluster
+#     - full_cluster
 
 - name: Configure Cloudera Manager server for TLS
   hosts: "{{ target | default('cloudera_manager') }}"
